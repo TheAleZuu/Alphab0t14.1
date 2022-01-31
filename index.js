@@ -2162,6 +2162,9 @@ if (tebakanime.hasOwnProperty(sender.split('@')[0]) && !isCmd && !mek.key.fromMe
 					}
            ////   
 //========================================================================================================================//
+		const comunityname1 = "Dɛɱơŋ Sƙყʑɛɛ ツ"
+const comunityname2 = "Demon Skyzee ツ"
+const comunityname3 = "D.S"
 		colors = ['red', 'white', 'black', 'blue', 'yellow', 'green']
 		const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 		const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
