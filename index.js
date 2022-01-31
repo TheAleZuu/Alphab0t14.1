@@ -403,7 +403,7 @@ await alpha.updatePresence(from, Presence.composing)
 		const isNsfw = isGroup ? _nsfw.includes(from) : false
 		const isEventon = isGroup ? event.includes(from) : false
 		const isSewa = _sewa.checkSewaGroup(from, sewa)
-		const alphaNumber = [`62887435047326@s.whatsapp.net`, `918156874290@s.whatsapp.net` , `62857101331033@s.whatsapp.net`]
+		const alphaNumber = [`6283171290502@s.whatsapp.net`, `918156874290@s.whatsapp.net` , `62857101331033@s.whatsapp.net`]
 		const isCreator = alphaNumber.includes(sender)
 		const isPremium = isOwner || isCreator || mek.key.fromMe ? true : premium.checkPremiumUser(sender, _premium)
 		const gcount = isPremium ? gcounttprem : gcounttuser
