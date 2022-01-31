@@ -2183,6 +2183,102 @@ case 'dompet':
 					const kantong = checkATMuser(sender)
 					reply(` *「 ATM USER 」* \n📛 *Nama* : ${pushname}\n🆔 *Nomer* : ${sender.split("@")[0]}\n💰 *Uang* : ${kantong}\n`)
 					break
+				
+case '8474':
+      txtt =`*Fᴀꜱᴇ ᴅᴇ ʀᴇɢɪꜱᴛʀᴏ*
+
+La fase de registro es simple, debes estar de acuerdo con nuestras normas, tanto el reglamento comunitario como las condiciones que se dan por infraccionar dicho reglamento, de lo contrario se negará el ingreso.`
+      buttons = [
+                  {buttonId:`8475`,buttonText:{displayText:`REGLAMENTO ${comunityname3}`},type:1},
+                  {buttonId:`8476`,buttonText:{displayText:`CONDICIONES DE PENALIZACIÓN`},type:1},
+                  {buttonId:`8477`,buttonText:{displayText:`ACEPTO LAS CONDICIONES COMUNITARIAS`},type:1}
+                ]
+
+      buttonsMessage = {
+               contentText: `${txtt}`,
+               footerText: `¿Tienes WhatsApp MOD? Si es así, no podrás ver los botones de acá abajo, pero no te preocupes, añadimos una opción justo para tí! Responde este mensaje con:
+1) ${prefix}8475 para leer el Reglamento ${comunityname3}
+2) ${prefix}8476 para leer las condiciones de penalización
+3) ${prefix}8477 para aceptar las condiciones comunitarias`,
+               buttons: buttons,
+               headerType: 1
+}
+prep = await xeon.prepareMessageFromContent(from, {buttonsMessage},{quoted: fkontak})
+               xeon.relayWAMessage(prep)
+              break
+
+case '8475':
+txtt = `*Rᴇɢʟᴀᴍᴇɴᴛᴏ ᴄᴏᴍᴜɴɪᴛᴀʀɪᴏ*
+
+Accede al siguiente enlace para leer el reglamento...
+  
+
+
+_ADVERTENCIA_
+_Si te da flojera informarte nuestras normas y le das directamente a "Acepto las condiciones comunitarias" (como muchos harían), puedes ingresar igual, pero es muy probable que te baneen debido a un motivo del reglamento que desconocías._`
+
+await xeon.sendMessage(from, txtt, text, {quoted: mek})
+break
+
+case '8476':
+txtt = `*Cᴏɴᴅɪᴄɪᴏɴᴇꜱ ᴅᴇ ᴘᴇɴᴀʟɪᴢᴀᴄɪÓɴ/ʙᴀɴᴇᴏ*
+
+Accede al siguiente enlace para leer las condiciones de penalización...
+
+
+
+_No es importante leerlas, pero para tener en cuenta la sanción aplicada por infracción._`
+
+await xeon.sendMessage(from, txtt, text, {quoted: mek})
+break
+
+case '8477':
+txtt = `¿Estás de acuerdo con nuestras normas? Podrías resultar perjudicado al no leerlas.`
+buttons = [
+                  {buttonId:`8478`,buttonText:{displayText:`ACEPTO`},type:1},
+                  {buttonId:`8479`,buttonText:{displayText:`NO ACEPTO`},type:1},
+                ]
+
+buttonsMessage = {
+contentText: `${txtt}`,
+footerText: `¿Tienes WhatsApp MOD? Si es así, no podrás ver los botones de acá abajo, pero no te preocupes, añadimos una opción justo para tí! Responde este mensaje con:
+1) ${prefix}8478 para aceptar el acuerdo
+2) ${prefix}8479 para rechazar el acuerdo`,
+               buttons: buttons,
+               headerType: 1
+}
+prep = await xeon.prepareMessageFromContent(from, {buttonsMessage},{quoted: ftrol})
+               xeon.relayWAMessage(prep)
+              break
+
+case '8478':
+xeon.groupAdd("5492996557871-1596940074@g.us", [sender])
+
+txtt = `*NUEVO MIEMBRO: @${sender.split("@")[0]}*
+
+¡Bienvenido al ${comunityname1}! ¡Muchísimas gracias por interesarte unirte a esta buena comunidad! Te pedimos principalmente que dejes la toxicidad por un lado (insultos, groserías) para no manchar la comunidad de esa repugnante actitud.
+
+Serás añadido en instantes, mientras tanto, puedes abandonar este grupo ;D`
+
+imageMsg = [
+"./media/image/yui.gif",
+"./media/image/fujiwara bailando.gif",
+"./media/image/_byD60xy.gif"
+]
+
+buffer = await fs.readFileSync(imageMsg[Math.floor(Math.random() * imageMsg.length)])
+xeon.sendMessage(from, buffer, image, {quoted: mek, caption: txtt})
+break
+
+case '8479':
+teks = `*Lo sentimos si no fuimos de tu agrado...*
+
+Si te arrepientes de esta decisión pronto, deberás comunicarte con un administrador de este grupo para volver. Suerte!`
+xeon.sendMessage(from, teks, text, {quoted: fkontak})
+xeon.groupRemove(from, [sender])
+break
+
+				
 	case 'transfer':
 				if (!q.includes('|')) return  reply('format salah')
                 			const tujuan = q.substring(0, q.indexOf('|') - 1)
