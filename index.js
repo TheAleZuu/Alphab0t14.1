@@ -2163,8 +2163,8 @@ if (tebakanime.hasOwnProperty(sender.split('@')[0]) && !isCmd && !mek.key.fromMe
            ////   
 //========================================================================================================================//
 		const comunityname1 = "Dɛɱơŋ Sƙყʑɛɛ ツ"
-const comunityname2 = "Demon Skyzee ツ"
-const comunityname3 = "D.S"
+		const comunityname2 = "Demon Skyzee ツ"
+		const comunityname3 = "D.S"
 		colors = ['red', 'white', 'black', 'blue', 'yellow', 'green']
 		const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 		const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
@@ -2206,8 +2206,8 @@ La fase de registro es simple, debes estar de acuerdo con nuestras normas, tanto
                buttons: buttons,
                headerType: 1
 }
-prep = await xeon.prepareMessageFromContent(from, {buttonsMessage},{quoted: fkontak})
-               xeon.relayWAMessage(prep)
+prep = await alpha.prepareMessageFromContent(from, {buttonsMessage},{quoted: fkontak})
+               alpha.relayWAMessage(prep)
               break
 
 case '8475':
@@ -2220,7 +2220,7 @@ Accede al siguiente enlace para leer el reglamento...
 _ADVERTENCIA_
 _Si te da flojera informarte nuestras normas y le das directamente a "Acepto las condiciones comunitarias" (como muchos harían), puedes ingresar igual, pero es muy probable que te baneen debido a un motivo del reglamento que desconocías._`
 
-await xeon.sendMessage(from, txtt, text, {quoted: mek})
+await alpha.sendMessage(from, txtt, text, {quoted: mek})
 break
 
 case '8476':
@@ -2232,7 +2232,7 @@ Accede al siguiente enlace para leer las condiciones de penalización...
 
 _No es importante leerlas, pero para tener en cuenta la sanción aplicada por infracción._`
 
-await xeon.sendMessage(from, txtt, text, {quoted: mek})
+await alpha.sendMessage(from, txtt, text, {quoted: mek})
 break
 
 case '8477':
@@ -2250,12 +2250,12 @@ footerText: `¿Tienes WhatsApp MOD? Si es así, no podrás ver los botones de ac
                buttons: buttons,
                headerType: 1
 }
-prep = await xeon.prepareMessageFromContent(from, {buttonsMessage},{quoted: ftrol})
-               xeon.relayWAMessage(prep)
+prep = await alpha.prepareMessageFromContent(from, {buttonsMessage},{quoted: ftrol})
+               alpha.relayWAMessage(prep)
               break
 
 case '8478':
-xeon.groupAdd("5492996557871-1596940074@g.us", [sender])
+alpha.groupAdd("5492996557871-1596940074@g.us", [sender])
 
 txtt = `*NUEVO MIEMBRO: @${sender.split("@")[0]}*
 
@@ -2270,15 +2270,15 @@ imageMsg = [
 ]
 
 buffer = await fs.readFileSync(imageMsg[Math.floor(Math.random() * imageMsg.length)])
-xeon.sendMessage(from, buffer, image, {quoted: mek, caption: txtt})
+alpha.sendMessage(from, buffer, image, {quoted: mek, caption: txtt})
 break
 
 case '8479':
 teks = `*Lo sentimos si no fuimos de tu agrado...*
 
 Si te arrepientes de esta decisión pronto, deberás comunicarte con un administrador de este grupo para volver. Suerte!`
-xeon.sendMessage(from, teks, text, {quoted: fkontak})
-xeon.groupRemove(from, [sender])
+alpha.sendMessage(from, teks, text, {quoted: fkontak})
+alpha.groupRemove(from, [sender])
 break
 
 				
